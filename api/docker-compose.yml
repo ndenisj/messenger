@@ -53,6 +53,7 @@ services:
       - .env
     depends_on:
       - rabbitmq
+      - postgres
       - auth
       - presence
     volumes:
