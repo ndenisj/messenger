@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class PresenceService {
-  async getPresence() {
-    return 'Hello Presence';
+  async getFoo() {
+    console.log('NOT CACHED!');
+    return { foo: 'bar' };
   }
 }
