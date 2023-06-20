@@ -6,6 +6,7 @@ import { MicroserviceOptions } from '@nestjs/microservices';
 
 async function bootstrap() {
   const app = await NestFactory.create(PresenceModule);
+  app.enableCors();
 
   const configService = app.get(ConfigService);
 
@@ -17,6 +18,9 @@ async function bootstrap() {
     sharedService.getRmqOptions(QUEUE),
   );
 
-  app.startAllMicroservices();
+  // app.startAllMicroservices();
+  // convert to hybrid micro service
+  await app.startAllMicroservices();
+  await app.listen(6000);
 }
 bootstrap();

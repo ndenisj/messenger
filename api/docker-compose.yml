@@ -32,6 +32,8 @@ services:
       context: ./
       dockerfile: ./apps/presence/Dockerfile
       # target: development
+    ports:
+      - '6000:6000'
     env_file:
       - .env
     depends_on:
