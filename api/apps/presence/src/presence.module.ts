@@ -9,8 +9,6 @@ import { PresenceGateway } from './presence.gateway';
 
 @Module({
   imports: [
-    // forwardRef(() => RedisModule),
-    // SharedModule,
     RedisModule,
     CacheModule.register(),
     SharedModule.registerRMQ('AUTH_SERVICE', process.env.RABBITMQ_AUTH_QUEUE),

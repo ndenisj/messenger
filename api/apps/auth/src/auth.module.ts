@@ -10,6 +10,8 @@ import {
   SharedModule,
   SharedService,
   UserEntity,
+  ConversationEntity,
+  MessageEntity,
   UsersRepository,
   FriendRequestsRepository,
   FriendRequestEntity,
@@ -44,7 +46,12 @@ import { JwtStrategy } from './jwt-strategy';
 
     SharedModule,
     PostgresDBModule,
-    TypeOrmModule.forFeature([UserEntity, FriendRequestEntity]),
+    TypeOrmModule.forFeature([
+      UserEntity,
+      FriendRequestEntity,
+      MessageEntity,
+      ConversationEntity,
+    ]),
   ],
   controllers: [AuthController],
   providers: [

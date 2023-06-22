@@ -11,7 +11,7 @@ export class PresenceService {
   }
 
   async getActiveUser(id: number) {
-    const user = await this.cache.get(`user ${id}`);
+    const user = await this.cache.get(`user-${id}`);
 
     return user as ActiveUser | undefined;
   }
